@@ -255,7 +255,7 @@ contract SamePreSale is Ownable {
     }
 
     function _calculateSaleQuote(uint paymentAmount_) internal view returns (uint) {
-        return uint(1e9).mul(paymentAmount_).div(salePrice);
+        return uint(1e18).mul(paymentAmount_).div(salePrice);
     }
 
     function calculateSaleQuote(uint paymentAmount_) external view returns (uint) {
