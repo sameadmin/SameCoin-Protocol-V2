@@ -233,7 +233,7 @@ contract SamePreSale is Ownable {
 
     function purchaseaSame(uint256 _amount) external payable returns (bool) {
         require(startTime < block.timestamp,'Not started');
-        require(endTimestamp < block.timestamp, 'Sale over');
+        require(endTimestamp > block.timestamp, 'Sale over');
         require(totalAmount > saleAmount, 'Sale over');
         require(boughtSame[msg.sender] == false, 'Already participated');
         bool one_ = whiteListedOne[msg.sender];
